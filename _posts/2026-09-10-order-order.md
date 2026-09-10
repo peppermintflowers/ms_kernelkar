@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Order! Order!!"
-date: 2026-09-10
+date: 2026-09-10 00:00:00 -0500
 ---
 <style>
   h2 {
@@ -26,7 +26,7 @@ While she claims her out of order life choices are perfect , ordering does matte
 
 ## The GEMM we are talking about
 
-Presenting..matrix multiplication using 2 square (NxN), **row major** matrices.
+Presenting..matrix multiplication using 2 square (N x N), **row major** matrices.
 
 ```cpp
 for (int i = 0; i < N; i++)
@@ -37,9 +37,7 @@ for (int i = 0; i < N; i++)
 
 This performs roughly:
 
-$$
-2N^3
-$$
+$$ 2N^3 $$
 
 floating-point operations: one multiplication and one addition for every (i, j, k) combination.
 
@@ -47,15 +45,11 @@ floating-point operations: one multiplication and one addition for every (i, j, 
 
 There are six ways to arrange those three loops above:
 
-`
-ijk ,   ikj ,
-jik ,   jki ,
-kij ,   kji 
-`
+ijk ,   ikj ,   jik ,   jki ,   kij ,   kji 
 
 After running all of them, across different matrix sizes, here were the performance results:
 
-<img src="{{ '/assets/loop_order_comparison.png' | relative_url }}" width="60%">
+<img src="{{ '/assets/order_order/loop_order_comparison.png' | relative_url }}" width="60%">
 
 **ikj** won. By a lot.
 
@@ -69,11 +63,11 @@ For these experiments, the matrices were stored in **row-major order**.
 
 While Ms. Kernelkar thought about a matrix like this:
 
-<img src="{{ '/assets/amatrix.png' | relative_url }}" width="25%">
+<img src="{{ '/assets/order_order/amatrix.png' | relative_url }}" width="25%">
 
 her computer dealt with something closer to:
 
-<img src="{{ '/assets/amatrix_mem.png' | relative_url }}" width="65%">
+<img src="{{ '/assets/order_order/amatrix_mem.png' | relative_url }}" width="65%">
 
 See how elements next to each other **within a row** are also next to each other in memory but elements in the same column aren't?
 
@@ -86,17 +80,15 @@ for (int k = 0; k < N; k++)
 
 As k increments:
 
-`
 A[i][0], A[i][1], A[i][2], A[i][3] ...
-`
+
 
 She imagines the accesses waltzing down the carpet of memory cells.
 
 But for B:
 
-`
 B[0][j], B[1][j], B[2][j], B[3][j] ...
-`
+
 
 Every time k increments, column accesses jump an entire row through B's memory instead of consuming nearby values.
 
@@ -111,14 +103,12 @@ for (int i = 0; i < N; i++)
 
 The inner loop walks through:
 
-`
 B[k][0], B[k][1], B[k][2], ...
-`
+
 and:
 
-`
 C[i][0], C[i][1], C[i][2], ...
-`
+
 
 Both are **contiguous** rows.
 
@@ -151,7 +141,7 @@ Except...
 
 Both of those numbers came from code compiled with -O3.
 [For reference, throughput for IJK and IKJ implementations benchmarked for 2048x2048 matrices, with varying compiler optimization levels.]
-<img src="{{ '/assets/compiler_vs_loop_order.png' | relative_url }}" width="65%">
+<img src="{{ '/assets/order_order/compiler_vs_loop_order.png' | relative_url }}" width="65%">
 
 And while poking around Clang's optimization reports, she discovered that the compiler was vectorizing the inner loop of her ikj implementation.
 
