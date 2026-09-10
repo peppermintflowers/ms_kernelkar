@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tile and Error"
-date: 2026-09-10 14:00:00 -0500
+date: 2026-09-10 11:30:00 -0500
 ---
 
 On her quest to make GEMM dramatically faster, Ms. Kernelkar encountered the next piece of conventional wisdom:
