@@ -34,15 +34,18 @@ They did not.
 For a 4096 × 4096 GEMM, the unblocked ikj implementation was already doing around **24.5 GFLOP/s**.
 
 And with the tiling:
-|Block size|Throughput|
-|-----------|-----------------|
-| 16  |    ~7.3 GFLOP/s |
-| 32   |  ~11.2 GFLOP/s  |
-| 64   |  ~15.8 GFLOP/s  |
-| 128  |  ~19.7 GFLOP/s  |
-| 256  |  ~18.1 GFLOP/s  |
-| 512  |  ~17.0 GFLOP/s  |
-| 1024 |  ~8.5  GFLOP/s  |
+
+| Block size | Throughput |
+|:---:|:---:|
+| 16   | ~7.3 GFLOP/s  |
+| 32   | ~11.2 GFLOP/s |
+| 64   | ~15.8 GFLOP/s |
+| 128  | ~19.7 GFLOP/s |
+| 256  | ~18.1 GFLOP/s |
+| 512  | ~17.0 GFLOP/s |
+| 1024 | ~8.5 GFLOP/s  |
+
+The larger blocks recovered some performance...
 
 
 Huh? None beat the supposedly less sophisticated unblocked version.
