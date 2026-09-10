@@ -3,20 +3,6 @@ layout: post
 title: "Order! Order!!"
 date: 2026-09-10 00:00:00 -0500
 ---
-<style>
-  h2 {
-    color: #FF46A2;
-    font-family: Arial, sans-serif;
-  }
-  code {
-    background-color: #4646ff4c;
-    color: #FFFF46;
-    padding: 2px 5px;
-  }
-  a {
-    color: #46FFA3;
-  }
-</style>
 
 Deeply inspired by the nuggets of wisdom on a discarded Cadbury wrapper from her afternoon snack, and equally fascinated by GEMMs (of a different kind), Ms. Kernelkar has decided to embody “Raho Umarless” and pursue the warpy ways of the GPU.
 
