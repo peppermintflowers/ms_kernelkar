@@ -1,12 +1,8 @@
 title: "Ms. Kernelkar"
-description: "this kernel runs from problems"
 
 theme: minima
 
 url: "https://peppermintflowers.github.io"
 baseurl: "/ms_kernelkar"
-
-author:
-  name: "Ms. Kernelkar (alter ego of peppermintflowers)"
 
 markdown: kramdown

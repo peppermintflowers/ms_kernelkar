@@ -55,7 +55,7 @@ kij ,   kji
 
 After running all of them, across different matrix sizes, here were the performance results:
 
-<img src="../assets/loop_order_comparison.png" width="60%">
+<img src="{{ '/assets/loop_order_comparison.png' | relative_url }}" width="60%">
 
 **ikj** won. By a lot.
 
@@ -69,11 +69,11 @@ For these experiments, the matrices were stored in **row-major order**.
 
 While Ms. Kernelkar thought about a matrix like this:
 
-<img src="../assets/amatrix.png" width="25%">
+<img src="{{ '/assets/amatrix.png' | relative_url }}" width="25%">
 
 her computer dealt with something closer to:
 
-<img src="../assets/amatrix_mem.png" width="65%" >
+<img src="{{ '/assets/amatrix_mem.png' | relative_url }}" width="65%">
 
 See how elements next to each other **within a row** are also next to each other in memory but elements in the same column aren't?
 
@@ -151,7 +151,7 @@ Except...
 
 Both of those numbers came from code compiled with -O3.
 [For reference, throughput for IJK and IKJ implementations benchmarked for 2048x2048 matrices, with varying compiler optimization levels.]
-<img src="../assets/compiler_vs_loop_order.png" width="65%" >
+<img src="{{ '/assets/compiler_vs_loop_order.png' | relative_url }}" width="65%">
 
 And while poking around Clang's optimization reports, she discovered that the compiler was vectorizing the inner loop of her ikj implementation.
 
