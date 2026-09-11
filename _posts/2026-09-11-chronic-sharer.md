@@ -6,15 +6,13 @@ date: 2026-09-11 13:21:00 -0500
 
 Last time, Ms. Kernelkar learned that if there was enough scope for reuse, moving data to the faster shared memory could actually be worth all the effort.. 
 
-Conveniently, she knew a computation with quite a lot of reuse. Unfortunately, she knew it rather well.
+A computation with a lot of reuse? Unfortunately, she knew one rather well.
 
 Some may remember the time Ms. Kernelkar tiled a matrix multiplication and her supposedly clever CPU optimization made it slower. But one cant just refuse **GEMM**s, so she wasn't going to give up this easy.
 
 ## A naive recluse
 
-For:
-
-$$ C = A \times B $$
+For C = A x B :
 
 Her first CUDA implementation assigned one thread to one output element of C.
 
