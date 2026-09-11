@@ -30,7 +30,7 @@ She knew GPU resources needed to be kept busy to get good performance, so she ra
 The threadier, the stealthier she thought.
 
 | Threads / Block | Blocks | Median Time (ms) |
-|:---:|---:|---:|
+|:---:|:---:|:---:|
 | 32  | 312,500 | 0.247808 |
 | 64  | 156,250 | 0.126976 |
 | 128 | 78,125  | 0.095232 |
@@ -53,7 +53,7 @@ She used two copy kernels over an **8192 × 8192** row-major matrix, with both p
 The results:
 
 | Access Pattern | Median Time (ms) |
-|:---:|---:|
+|:---:|:---:|
 | Coalesced | 0.4352 |
 | Strided | 2.58202 |
 
@@ -74,7 +74,7 @@ Her experiment compared two versions of a kernel. One that repeatedly accessed a
 She kept the workload at **2²⁴ elements**, used **256 threads per block**, and varied how many times the data was reused.
 
 | Reuse | Global (ms) | Shared (ms) | Global / Shared |
-|:---:|---:|---:|---:|
+|:---:|:---:|:---:|:---:|
 | 1  | 0.110080 | 0.111616 | 0.986× |
 | 2  | 0.118784 | 0.116736 | 1.018× |
 | 4  | 0.129024 | 0.128000 | 1.008× |
