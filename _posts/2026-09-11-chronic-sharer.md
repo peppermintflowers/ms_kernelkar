@@ -97,18 +97,20 @@ There needed to be a cleaner comparison.
 
 She fixed both the naive and tiled kernels at **16×16 threads per block** and ran them across several matrix sizes.
 
-<img src="{{ '/assets/chronic_sharer/gemm_scaling.png' | relative_url }}" width="60%">
+<img src="{{ '/assets/chronic_sharer/gemm_scaling.png' | relative_url }}" width="70%">
 
 With the thread block configuration held constant, the tiled kernel was faster at **every matrix size tested**.
 
 And the measured advantage grew with the workload:
 
-```text
 N = 1024 -> 1.48×
+
 N = 2048 -> 1.63×
+
 N = 4096 -> 1.97×
+
 N = 8192 -> 2.10×
-```
+
 
 At N = 8192, the 16×16 tiled implementation reached about **4.72 TFLOP/s**, a little over twice the performance of the naive kernel in the controlled comparison.
 
@@ -154,6 +156,7 @@ But hey, the tiled kernel wasn't stall free either! Staging tiles meant shared m
 Nsight also suggested that the naive kernel's warp level memory access pattern could be improved, so shared memory tiling was not necessarily the only optimization available, or a comparison against a fully optimized naive kernel. Rather, it reorganized enough of the repeated memory traffic to substantially improve this implementation.
 
 This particular tiled kernel worked because GEMM contains substantial data reuse, and shared memory gave the block a way to organize that reuse explicitly.
+
 ---
 
 ## Signing off
