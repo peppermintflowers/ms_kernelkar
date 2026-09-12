@@ -16,13 +16,12 @@ a {
 }
 .home-layout {
   display: grid;
-  grid-template-columns: 300px minmax(0, 750px);
-  gap: 3rem;
+  grid-template-columns: 300px minmax(0, 760px);
+  gap: 2.5rem;
   align-items: start;
 
-  width: min(1150px, calc(100vw - 40px));
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .home-banner {
@@ -39,10 +38,7 @@ a {
 
 .home-content {
   min-width: 0;
-}
-
-.post-preview {
-  margin-bottom: 3rem;
+  max-width: 760px;
 }
 
 @media (max-width: 900px) {
@@ -50,7 +46,6 @@ a {
     display: block;
     width: 100%;
     margin-left: 0;
-    transform: none;
   }
 
   .home-banner {
