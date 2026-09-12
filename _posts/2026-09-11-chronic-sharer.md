@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Chronic Sharer"
+subtitle: "GEMM · Shared Memory · Tiling · GPU Profiling"
 date: 2026-09-11 13:21:00 -0500
 ---
 

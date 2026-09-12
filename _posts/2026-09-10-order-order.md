@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Order! Order!!"
+subtitle: "Loop Order"
 date: 2026-09-10 00:00:00 -0500
 ---
 

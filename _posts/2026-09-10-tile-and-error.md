@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Tile and Error"
+subtitle: "Cache Locality · Tiling · Vectorization"
 date: 2026-09-10 11:30:00 -0500
 ---
 

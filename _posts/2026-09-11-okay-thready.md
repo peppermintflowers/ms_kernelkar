@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Okay, Thready?"
+subtitle: "Thread Blocks · Coalescing · Shared Memory"
 date: 2026-09-11 01:01:00 -0500
 ---
 

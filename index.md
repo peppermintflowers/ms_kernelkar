@@ -17,25 +17,31 @@ layout: default
       <article class="post-preview">
 
         <h2 class="post-title">
-          <a href="{{ post.url | relative_url }}">
+        <a href="{{ post.url | relative_url }}">
             {{ post.title }}
-          </a>
+        </a>
         </h2>
 
+        {% if post.subtitle %}
+        <p class="post-subtitle">
+            {{ post.subtitle }}
+        </p>
+        {% endif %}
+
         <p class="post-date">
-          {{ post.date | date: "%B %-d, %Y" }}
+        {{ post.date | date: "%B %-d, %Y" }}
         </p>
 
         <p class="post-excerpt">
-          {{ post.excerpt | strip_html | truncatewords: 45 }}
+        {{ post.excerpt | strip_html | truncatewords: 45 }}
         </p>
 
         <a class="read-more" href="{{ post.url | relative_url }}">
-          Read more →
+        Read more →
         </a>
 
-      </article>
-    {% endfor %}
+        </article>
+        {% endfor %}
 
   </div>
 
