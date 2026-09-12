@@ -4,6 +4,13 @@ layout: default
 
 <div class="home-layout">
 
+  <aside class="home-banner">
+    <img
+      src="{{ '/assets/ms-kernelkar-banner.png' | relative_url }}"
+      alt="Ms. Kernelkar"
+    >
+  </aside>
+
   <div class="home-content">
 
     {% for post in site.posts %}
@@ -31,12 +38,5 @@ layout: default
     {% endfor %}
 
   </div>
-
-  <aside class="home-banner">
-    <img
-      src="{{ '/assets/ms-kernelkar-banner.png' | relative_url }}"
-      alt="Ms. Kernelkar"
-    >
-  </aside>
 
 </div>

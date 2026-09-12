@@ -16,42 +16,23 @@ a {
 }
 .home-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-columns: 340px minmax(0, 1fr);
   gap: 2.5rem;
   align-items: start;
 }
 
-.home-content {
-  min-width: 0;
-}
-
-.post-preview {
-  margin-bottom: 3rem;
-}
-
-.post-title {
-  margin-bottom: 0.25rem;
-}
-
-.post-date {
-  margin-top: 0;
-  font-size: 0.9rem;
-  opacity: 0.65;
-}
-
-.post-excerpt {
-  margin: 0.75rem 0;
-  line-height: 1.6;
-}
-
-.read-more {
-  text-decoration: none;
+.home-banner {
+  width: 340px;
 }
 
 .home-banner img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.home-content {
+  min-width: 0;
 }
 
 @media (max-width: 900px) {
