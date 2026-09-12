@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 
 <div class="home-layout">
@@ -34,7 +34,7 @@ layout: home
 
   <aside class="home-banner">
     <img
-      src="{{ '/assets/images/ms-kernelkar-banner.png' | relative_url }}"
+      src="{{ '/assets/ms-kernelkar-banner.png' | relative_url }}"
       alt="Ms. Kernelkar"
     >
   </aside>
