@@ -94,7 +94,7 @@ There needed to be a cleaner comparison.
 
 ## More experiments
 
-She fixed both the naive and tiled kernels at **16×16 threads per block** and ran them across several matrix sizes.
+To isolate the comparison a little further, she next held the thread-block configuration constant. She fixed both the naive and tiled kernels at **16×16 threads per block** and ran them across several matrix sizes. This was a controlled configuration comparison rather than a comparison of the best configuration found for each kernel.
 
 <img src="{{ '/assets/chronic_sharer/gemm_scaling.png' | relative_url }}" width="70%">
 

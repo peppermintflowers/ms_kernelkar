@@ -22,11 +22,7 @@ for (int i = 0; i < N; i++)
             C[i*N + j] += A[i*N + k] * B[k*N + j];
 ```
 
-This performs roughly:
-
-$$ 2N^3 $$
-
-floating-point operations: one multiplication and one addition for every (i, j, k) combination.
+This performs roughly 2N³ floating-point operations: one multiplication and one addition for every (i, j, k) combination.
 
 ## The Experiment
 
@@ -107,7 +103,7 @@ Also, A[i][k] stays constant throughout that inner loop and gets **reused**.
 
 Ah!! She had read before that sequential memory access is faster because of cache locality.
 Apparently, understanding how your accesses line up with memory can make a big difference to performance!
-She knows now that the **order in which she requests data** can dominate an otherwise identical computation. 
+She knows now that the **order in which she requests data** can dramatically affect the performance of an otherwise identical computation.
 
 
 ## Ms. Predictions
@@ -120,7 +116,7 @@ In other news, she has put her oracle career on hold for now.
 
 ## Short lived happiness
 
-At this point, Ms. Kernelkar was quite pleased with herself. She had changed the order of three loops and the memory accesses looked much friendlier. Her ikj implementation took was sooo much faster.
+At this point, Ms. Kernelkar was quite pleased with herself. She had changed the order of three loops and the memory accesses looked much friendlier. Her ikj implementation was sooo much faster.
 
 Case closed. Cache locality did it. Order! Order!!
 

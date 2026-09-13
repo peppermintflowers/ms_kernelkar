@@ -5,7 +5,7 @@ subtitle: "Thread Blocks · Coalescing · Shared Memory"
 date: 2026-09-11 01:01:00 -0500
 ---
 
-The day after the tiling rennovations had let her down, Ms. Kernelkar decided it was finally time. She was going to CUDA.
+The day after the tiling renovations had let her down, Ms. Kernelkar decided it was finally time. She was going to CUDA.
 
 This was, after all, where she had been trying to get to.
 
@@ -43,7 +43,7 @@ But after that boost the performance seemed steady. 128, 256, and 512 threads pe
 
 More threads in a block do not make the work performed per thread any cheaper. So once enough parallelism was exposed for this kernel, increasing the block size further gave very little in return.
 
-**Enough parallelism matters. More is not neccessarily better.**
+**Enough parallelism matters. More is not necessarily better.**
 
 ## New session, old lesson
 
@@ -70,7 +70,7 @@ It seemed to be a reasonable claim that the shared memory that lives on-chip and
 
 However, having learnt the importance of benchmarking optimizations and understanding now that they all came with their own set of trade-offs, she wanted to know if AND *when* this would actually help. 
 
-Her experiment compared two versions of a kernel. One that repeatedly accessed a source value through global memory, and another that first staged data in shared memory and then reused it from there.
+Her experiment compared two versions of a kernel. One that repeatedly accessed a source value through global/ cache memory, and another that first staged data in shared memory and then reused it from there.
 
 She kept the workload at **2²⁴ elements**, used **256 threads per block**, and varied how many times the data was reused.
 
